@@ -3,9 +3,9 @@ import { withRouter } from "react-router";
 
 function Correct({ items, setItems, queryRecipes, history }) {
   return (
-    <div class="container">
-      <div class="row">
-        <div class="one-half column" style="margin-top: 25%">
+    <div className="container">
+      <div className="row">
+        <div className="one-half column" style={{ marginTop: "25%" }}>
           <h4>WE FOUND:</h4>
           <h5>
             <small>please correct, robots are only robots</small>
@@ -14,20 +14,20 @@ function Correct({ items, setItems, queryRecipes, history }) {
           <ul>
             {items &&
               items.map(item => (
-                <li class="item-list">
+                <li className="item-list">
                   item.name
-                  <div class="item-list-control">
+                  <div className="item-list-control">
                     <label
-                      for="button-ok"
-                      class="button-ok-label button-label-screen3"
+                      htmlFor="button-ok"
+                      className="button-ok-label button-label-screen3"
                     />
-                    <input id="button-ok" type="submit" class="button-ok" />
+                    <input id="button-ok" type="submit" className="button-ok" />
 
                     <label
-                      for="button-no"
-                      class="button-no-label button-label-screen3"
+                      htmlFor="button-no"
+                      className="button-no-label button-label-screen3"
                     />
-                    <input id="button-no" class="button-no" type="submit" />
+                    <input id="button-no" className="button-no" type="submit" />
                   </div>
                 </li>
               ))}

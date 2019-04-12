@@ -11,7 +11,7 @@ function Start({ queryItems, history }) {
             <small>and save some time for more netflix</small>
           </h5>
           <form>
-            <label for="camera-upload" className="label-upload" />
+            <label htmlFor="camera-upload" className="label-upload" />
             <br />
             <input
               id="camera-upload"
