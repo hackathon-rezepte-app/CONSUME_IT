@@ -4,6 +4,7 @@
 }
 
 .one-half.column {
+    float: none;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
@@ -11,7 +12,7 @@
 }
 
 .label-upload {
-    background-image:url('/images/camera_icon.svg');
+    background-image:url('../images/camera_icon.svg');
     background-repeat: no-repeat;
     background-size: 150px 150px;
     height: 150px;
@@ -19,11 +20,40 @@
     background-position: center;
 }
 
-.file-input {
+.file-input, .button-ok, .button-no {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
 	z-index: -1;
+}
+
+.button-label-screen3 {
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background-position: center;
+}
+
+.button-ok-label {
+    background-image:url('../images/button_ok.svg');
+
+}
+.button-no-label {
+    background-image:url('../images/button_no.svg');
+
+}
+
+.item-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-list-control {
+    flex-wrap: nowrap;
+    display: flex;
 }
