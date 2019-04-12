@@ -1,5 +1,16 @@
 import React from "react";
 
-export default function Start() {
-  return <div />;
+function Recipes({ recipes }) {
+  return (
+    <div>
+      Rezepte:
+      <ul>
+        {recipes.map(recipe => (
+          <ul>{recipe.name}</ul>
+        ))}
+      </ul>
+    </div>
+  );
 }
+
+export default Recipes;

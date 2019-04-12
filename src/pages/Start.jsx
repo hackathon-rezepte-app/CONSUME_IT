@@ -1,5 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function Start() {
-  return <div />;
+function Start({ queryItems }) {
+  const [picture, setPicture] = useState(null);
+  return (
+    <div>
+      <input
+        className="file-input"
+        type="file"
+        accept="image/*"
+        onChange={event => setPicture(event.target.files[0])}
+      />
+      <button onClick={() => queryItems(picture)} />
+    </div>
+  );
 }
+
+export default Start;
