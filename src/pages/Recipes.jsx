@@ -4,11 +4,7 @@ function Recipes({ recipes }) {
   return (
     <div>
       Rezepte:
-      <ul>
-        {recipes.map(recipe => (
-          <ul>{recipe.name}</ul>
-        ))}
-      </ul>
+      <ul>{recipes && recipes.map(recipe => <ul>{recipe.name}</ul>)}</ul>
     </div>
   );
 }
