@@ -10,18 +10,23 @@ export default function App() {
   const [recipes, setRecipes] = useState([]);
 
   function getItems(picture) {
-    Axios.post("", picture).then(data => {
-      setItems(data);
-    });
+    // Axios.post("", picture).then(data => {
+    //   setItems(data);
+    // });
     setItems(null);
+    setItems([{ name: "banana" }, { name: "apple" }]);
     setRecipes(null);
   }
 
   function getRecipes() {
-    Axios.post("", items).then(data => {
+    setRecipes(null);
+    Axios.post(
+      "https://foodrecipesearch2.azurewebsites.net/api/HttpTrigger1?code=NhQM5XrZtyruksuhZ8CVxMSLxxekeZoQa7qvkB1MNTMcgBnzXCgpOg==",
+      items
+    ).then(data => {
+      console.log(data);
       setRecipes(data);
     });
-    setRecipes(null);
   }
 
   return (

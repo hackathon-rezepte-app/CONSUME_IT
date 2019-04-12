@@ -15,7 +15,7 @@ function Correct({ items, setItems, queryRecipes, history }) {
             {items &&
               items.map(item => (
                 <li className="item-list">
-                  item.name
+                  {item.name}
                   <div className="item-list-control">
                     <label
                       htmlFor="button-ok"
