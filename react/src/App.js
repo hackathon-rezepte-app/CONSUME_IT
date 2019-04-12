@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Axios from "axios";
-import "./App.css";
 import Start from "./pages/Start";
 import Correct from "./pages/Correct";
 import Recipes from "./pages/Recipes";
