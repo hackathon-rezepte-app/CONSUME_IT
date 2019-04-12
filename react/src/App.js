@@ -10,12 +10,19 @@ export default function App() {
   const [recipes, setRecipes] = useState([]);
 
   function getItems(picture) {
-    // Axios.post("", picture).then(data => {
-    //   setItems(data);
-    // });
     setItems(null);
-    setItems([{ name: "banana" }, { name: "apple" }]);
     setRecipes(null);
+
+    Axios.post(
+      "https://fooddetectionfunction.azurewebsites.net/api/HttpTrigger1?code=DhJiN9OpE3bNuxkdvCPIKgB4/80pTxQLDOvchiUwziNTEJ8fjZf6xw==",
+      picture
+    ).then(response => {
+      if (response.headers.contentType == "appilcation/json") {
+        setItems(response.data);
+      } else {
+        setItems([{ name: "banana" }, { name: "apple" }]);
+      }
+    });
   }
 
   function getRecipes() {
