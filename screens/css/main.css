@@ -1,0 +1,29 @@
+.container {
+    max-width: 500px;
+    text-align: center;
+}
+
+.one-half.column {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: auto;
+}
+
+.label-upload {
+    background-image:url('/images/camera_icon.svg');
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    height: 150px;
+    text-align: center;
+    background-position: center;
+}
+
+.file-input {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
