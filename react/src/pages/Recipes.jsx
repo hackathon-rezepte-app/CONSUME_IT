@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
+import { ClipLoader } from "react-spinners";
 
 function Recipes({ recipes, history }) {
   return (
@@ -8,7 +9,17 @@ function Recipes({ recipes, history }) {
         <div className="one-half column" style={{ marginTop: "25%" }}>
           <h4>MAYBE YOU COOK:</h4>
 
-          {recipes ? (
+          {!recipes && (
+            <ClipLoader
+              css={{ marginTop: "40px" }}
+              sizeUnit={"px"}
+              size={50}
+              color={"#7AC6B8"}
+              loading={true}
+            />
+          )}
+
+          {recipes && (
             <>
               <h5>
                 <small>have a nice meal!</small>
@@ -33,8 +44,6 @@ function Recipes({ recipes, history }) {
                 ))}
               </ul>
             </>
-          ) : (
-            <div />
           )}
         </div>
       </div>

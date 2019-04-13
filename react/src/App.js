@@ -7,8 +7,8 @@ import Recipes from "./pages/Recipes";
 import Detail from "./pages/Detail";
 
 export default function App() {
-  const [items, setItems] = useState([]);
-  const [recipes, setRecipes] = useState([]);
+  const [items, setItems] = useState(null);
+  const [recipes, setRecipes] = useState(null);
 
   function getItems(picture) {
     setItems(null);

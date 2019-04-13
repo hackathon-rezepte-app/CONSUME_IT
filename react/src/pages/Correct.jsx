@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
+import { ClipLoader } from "react-spinners";
 
 function Correct({ items, setItems, queryRecipes, history }) {
   return (
@@ -10,6 +11,16 @@ function Correct({ items, setItems, queryRecipes, history }) {
           <h5>
             <small>please correct, robots are only robots</small>
           </h5>
+
+          {!items && (
+            <ClipLoader
+              css={{ marginTop: "20px" }}
+              sizeUnit={"px"}
+              size={50}
+              color={"#7AC6B8"}
+              loading={true}
+            />
+          )}
 
           <ul>
             {items &&
@@ -35,6 +46,8 @@ function Correct({ items, setItems, queryRecipes, history }) {
         </div>
       </div>
 
+      {items && (
+        <>
       <label
         htmlFor="button-next"
         className="button-next-label button-label-screen3"
@@ -48,6 +61,8 @@ function Correct({ items, setItems, queryRecipes, history }) {
           queryRecipes(items);
         }}
       />
+        </>
+      )}
     </div>
   );
 }
