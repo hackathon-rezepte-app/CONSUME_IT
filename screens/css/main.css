@@ -49,7 +49,7 @@ h4 {
 }
 
 .button-ok-label {
-    background-image:url('../images/button_ok.svg');
+    background-image:url('../images/button_change.svg');
 }
 .button-no-label {
     background-image:url('../images/button_no.svg');
@@ -83,6 +83,25 @@ h4 {
 
 .splash-img {
     width: 100%;
-    bottom: 0;
+    bottom: 50px;
     position: absolute;
+    max-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer {
+    background-color: white;
+    bottom: 0;
+    color: #353535;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
 }
