@@ -15,7 +15,10 @@ function Detail({ recipes, match, history }) {
 
           <h5>ingredigents:</h5>
           <ul>
-            {recipe.ingredients.map(ingredient => (
+            {recipe.needs.map(ingredient => (
+              <li className="ingredigents-list not-available">{ingredient}</li>
+            ))}
+            {recipe.uses.map(ingredient => (
               <li className="ingredigents-list">{ingredient}</li>
             ))}
           </ul>
