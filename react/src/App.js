@@ -63,12 +63,12 @@ export default function App() {
           render={() => <Detail recipes={recipes} />}
         />
       </Router>
-      <div class="footer">
+      <div className="footer">
         <p>
           made with{" "}
           <img
             src="images/icon_heart.svg"
-            class=""
+            className=""
             height="15px"
             width="15px"
           />{" "}

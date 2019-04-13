@@ -13,6 +13,8 @@ function Detail({ recipes, match, history }) {
             <small>mhhhhm ... delicious</small>
           </h5>
 
+          <img src={recipe.image} width="100%" height="auto" />
+
           <h5>ingredigents:</h5>
           <ul>
             {recipe.needs.map(ingredient => (
