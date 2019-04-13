@@ -28,16 +28,16 @@ function Recipes({ recipes, history }) {
 
                 <ul>
                   {recipes.map((recipe, index) => (
-                    <li key={index} className="item-list">
+                    <li key={recipe.index} className="item-list">
                       <img src={recipe.image} width="150px" height="100px" />
                       {recipe.name}
                       <div className="item-list-control">
                         <label
-                          htmlFor="button-show-recipe"
+                          htmlFor={"button-show-recipe" + index}
                           className="button-recipe-label button-label-screen3"
                         />
                         <input
-                          id="button-show-recipe"
+                          id={"button-show-recipe" + index}
                           className="button-ok"
                           onClick={() => history.push("/detail/" + index)}
                         />
@@ -53,7 +53,7 @@ function Recipes({ recipes, history }) {
 
       <label
         htmlFor="button-refresh"
-        class="button-refresh-label button-label-screen3"
+        className="button-refresh-label button-label-screen3"
       />
       <input
         id="button-refresh"
