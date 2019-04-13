@@ -21,17 +21,12 @@ export default function App() {
     setItems(null);
     setRecipes(null);
 
-    setItems([{ name: "banana" }, { name: "apple" }]);
-    // Axios.post(
-    //   "https://fooddetectionfunction.azurewebsites.net/api/HttpTrigger1?code=DhJiN9OpE3bNuxkdvCPIKgB4/80pTxQLDOvchiUwziNTEJ8fjZf6xw==",
-    //   picture
-    // ).then(response => {
-    //   if (response.headers.contentType === "application/json") {
-    //     setItems(response.data);
-    //   } else {
-    //     setItems([{ name: "banana" }, { name: "apple" }]);
-    //   }
-    // });
+    Axios.post(
+      "https://fooddetectionfunction.azurewebsites.net/api/HttpTrigger1?code=DhJiN9OpE3bNuxkdvCPIKgB4/80pTxQLDOvchiUwziNTEJ8fjZf6xw==",
+      picture
+    ).then(response => {
+      setItems(response.data);
+    });
   }
 
   function getRecipes() {
@@ -39,7 +34,7 @@ export default function App() {
     Axios.post(
       "https://foodrecipesearch2.azurewebsites.net/api/HttpTrigger1?code=NhQM5XrZtyruksuhZ8CVxMSLxxekeZoQa7qvkB1MNTMcgBnzXCgpOg==",
       {
-        ingredients: items
+        ingredients: items.map(item => item.tagName)
       }
     ).then(response => {
       setRecipes(response.data.recipes);

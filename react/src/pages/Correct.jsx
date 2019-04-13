@@ -31,7 +31,7 @@ function Correct({ items, setItems, queryRecipes, history }) {
             {items &&
               items.map((item, index) => (
                 <li key={index} className="item-list">
-                  {item.name}
+                  {item.tagName}
                   <div className="item-list-control">
                     <label
                       htmlFor="button-ok"
