@@ -6,7 +6,7 @@ function Splash() {
       <div className="container">
         <div className="row">
           <div className="one-half column" style={{ marginTop: "25%" }}>
-            <h1>FRIDGY HOLLOW</h1>
+            <h1>CONSUME IT</h1>
             <h4>prevent trash, save cash!</h4>
           </div>
         </div>
