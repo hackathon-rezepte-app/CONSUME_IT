@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router";
 import { ClipLoader } from "react-spinners";
 
-function Correct({ items, setItems, queryRecipes, history }) {
+function Correct({ image, items, setItems, queryRecipes, history }) {
   function deleteItem(index) {
     console.log(index);
     items.splice(index, 1);
     setItems([...items]);
   }
+
+  const [width, setWidth] = useState(null);
+  const [height, setHeight] = useState(null);
+
+  const fr = new FileReader();
+
+  fr.onload = function() {
+    // file is loaded
+    var img = new Image();
+
+    img.onload = function() {
+      setWidth(img.width); // image is loaded; sizes are available
+      setHeight(img.height);
+    };
+
+    img.src = fr.result; // is the data URL because called with readAsDataURL
+  };
+
+  fr.readAsDataURL(image);
+
+  const imageURL = URL.createObjectURL(image);
 
   return (
     <>
@@ -31,33 +52,47 @@ function Correct({ items, setItems, queryRecipes, history }) {
 
             <ul>
               {items &&
-                items.map((item, index) => (
-                  <li key={index} className="item-list">
-                    {item.tagName}
-                    <div className="item-list-control">
-                      <label
-                        htmlFor="button-ok"
-                        className="button-ok-label button-label-screen3"
+                items.map((item, index) => {
+                  const real_h = 100 / item.boundingBox.height;
+                  const real_w = real_h * (width / height);
+                  return (
+                    <li key={index} className="item-list">
+                      <div
+                        style={{
+                          width: "150px",
+                          height: "100px",
+                          backgroundImage: `url(${imageURL})`,
+                          backgroundPosition: `left ${-item.boundingBox.left *
+                            real_w}px top ${-item.boundingBox.top * real_h}px`,
+                          backgroundSize: `${real_w}px`
+                        }}
                       />
-                      <input
-                        id="button-ok"
-                        type="submit"
-                        className="button-ok"
-                      />
+                      {item.tagName}
+                      <div className="item-list-control">
+                        <label
+                          htmlFor="button-ok"
+                          className="button-ok-label button-label-screen3"
+                        />
+                        <input
+                          id="button-ok"
+                          type="submit"
+                          className="button-ok"
+                        />
 
-                      <label
-                        htmlFor="button-no"
-                        className="button-no-label button-label-screen3"
-                      />
-                      <input
-                        id="button-no"
-                        className="button-no"
-                        type="submit"
-                        onClick={() => deleteItem(index)}
-                      />
-                    </div>
-                  </li>
-                ))}
+                        <label
+                          htmlFor="button-no"
+                          className="button-no-label button-label-screen3"
+                        />
+                        <input
+                          id="button-no"
+                          className="button-no"
+                          type="submit"
+                          onClick={() => deleteItem(index)}
+                        />
+                      </div>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
         </div>

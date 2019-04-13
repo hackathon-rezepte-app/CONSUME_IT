@@ -10,6 +10,7 @@ import Splash from "./pages/Splash";
 export default function App() {
   const [items, setItems] = useState(null);
   const [recipes, setRecipes] = useState(null);
+  const [image, setImage] = useState(null);
 
   const [splash, setSplash] = useState(true);
 
@@ -27,6 +28,8 @@ export default function App() {
     ).then(response => {
       setItems(response.data);
     });
+
+    setImage(picture);
   }
 
   function getRecipes() {
@@ -54,6 +57,7 @@ export default function App() {
               queryRecipes={getRecipes}
               items={items}
               setItems={setItems}
+              image={image}
             />
           )}
         />
