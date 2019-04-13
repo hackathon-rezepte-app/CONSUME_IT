@@ -34,14 +34,20 @@ function Correct({ items, setItems, queryRecipes, history }) {
           </ul>
         </div>
       </div>
-      <button
+
+      <label
+        htmlFor="button-next"
+        className="button-next-label button-label-screen3"
+      />
+      <input
+        id="button-next"
+        type="submit"
+        className="button-next"
         onClick={() => {
           history.push("/recipes");
           queryRecipes(items);
         }}
-      >
-        Weiter
-      </button>
+      />
     </div>
   );
 }
