@@ -69,7 +69,7 @@ function Correct({ image, items, setItems, queryRecipes, history }) {
                       />
                       {item.tagName}
                       <div className="item-list-control">
-                        <label
+                        {/* <label
                           htmlFor="button-ok"
                           className="button-ok-label button-label-screen3"
                         />
@@ -77,7 +77,7 @@ function Correct({ image, items, setItems, queryRecipes, history }) {
                           id="button-ok"
                           type="submit"
                           className="button-ok"
-                        />
+                        /> */}
 
                         <label
                           htmlFor="button-no"
