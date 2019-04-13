@@ -15,7 +15,7 @@ export default function App() {
 
   setTimeout(() => {
     setSplash(false);
-  }, 1500);
+  }, 3000);
 
   function getItems(picture) {
     setItems(null);
