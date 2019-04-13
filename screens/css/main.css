@@ -1,3 +1,12 @@
+body {
+    background-color: #353535;
+    color: white;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
 .container {
     max-width: 500px;
     text-align: center;
@@ -36,6 +45,7 @@
     width: 50px;
     text-align: center;
     background-position: center;
+    padding: 0 5px;
 }
 
 .button-ok-label {
@@ -44,6 +54,11 @@
 }
 .button-no-label {
     background-image:url('../images/button_no.svg');
+
+}
+
+.button-recipe-label {
+    background-image:url('../images/button_go_recipe.svg');
 
 }
 
@@ -57,3 +72,4 @@
     flex-wrap: nowrap;
     display: flex;
 }
+
