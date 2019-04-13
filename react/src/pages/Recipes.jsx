@@ -30,7 +30,17 @@ function Recipes({ recipes, history }) {
                   {recipes.map((recipe, index) => (
                     <li key={recipe.index} className="item-list">
                       <img src={recipe.image} width="150px" height="100px" />
-                      {recipe.name}
+
+                      <div>
+                        <p>{recipe.name}</p>
+                        {recipe.needs.length > 0 && (
+                          <p class="ingredigents-list not-available">
+                            missing {recipe.needs.length} of{" "}
+                            {recipe.ingredients.length} items
+                          </p>
+                        )}
+                      </div>
+
                       <div className="item-list-control">
                         <label
                           htmlFor={"button-show-recipe" + index}
