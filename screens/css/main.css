@@ -29,7 +29,7 @@ h4 {
     background-position: center;
 }
 
-.file-input, .button-ok, .button-no {
+.file-input, .button-ok, .button-no, .button-door {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -50,11 +50,14 @@ h4 {
 
 .button-ok-label {
     background-image:url('../images/button_ok.svg');
-
 }
 .button-no-label {
     background-image:url('../images/button_no.svg');
+}
 
+.button-door-label {
+    background-image:url('../images/button_door.svg');
+    margin: 0 auto;
 }
 
 .button-recipe-label {
