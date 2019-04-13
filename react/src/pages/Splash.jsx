@@ -12,6 +12,18 @@ function Splash() {
         </div>
       </div>
       <img alt="logo" src="images/cook_splash.png" className="splash-img" />
+      <div className="footer">
+        <p>
+          made with{" "}
+          <img
+            src="images/icon_heart.svg"
+            className=""
+            height="15px"
+            width="15px"
+          />{" "}
+          in dresden
+        </p>
+      </div>
     </>
   );
 }
