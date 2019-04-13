@@ -44,7 +44,13 @@ export default function App() {
       <Route path="/" exact render={() => <Start queryItems={getItems} />} />
       <Route
         path="/correct"
-        render={() => <Correct queryRecipes={getRecipes} items={items} />}
+        render={() => (
+          <Correct
+            queryRecipes={getRecipes}
+            items={items}
+            setItems={setItems}
+          />
+        )}
       />
       <Route path="/recipes" render={() => <Recipes recipes={recipes} />} />
       <Route

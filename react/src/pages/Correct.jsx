@@ -3,6 +3,11 @@ import { withRouter } from "react-router";
 import { ClipLoader } from "react-spinners";
 
 function Correct({ items, setItems, queryRecipes, history }) {
+  function deleteItem(index) {
+    items.splice(index, 1);
+    setItems([...items]);
+  }
+
   return (
     <div className="container">
       <div className="row">
@@ -38,7 +43,12 @@ function Correct({ items, setItems, queryRecipes, history }) {
                       htmlFor="button-no"
                       className="button-no-label button-label-screen3"
                     />
-                    <input id="button-no" className="button-no" type="submit" />
+                    <input
+                      id="button-no"
+                      className="button-no"
+                      type="submit"
+                      onClick={() => deleteItem(index)}
+                    />
                   </div>
                 </li>
               ))}
@@ -46,21 +56,21 @@ function Correct({ items, setItems, queryRecipes, history }) {
         </div>
       </div>
 
-      {items && (
+      {items && items.length > 0 && (
         <>
-      <label
-        htmlFor="button-next"
-        className="button-next-label button-label-screen3"
-      />
-      <input
-        id="button-next"
-        type="submit"
-        className="button-next"
-        onClick={() => {
-          history.push("/recipes");
-          queryRecipes(items);
-        }}
-      />
+          <label
+            htmlFor="button-next"
+            className="button-next-label button-label-screen3"
+          />
+          <input
+            id="button-next"
+            type="submit"
+            className="button-next"
+            onClick={() => {
+              history.push("/recipes");
+              queryRecipes(items);
+            }}
+          />
         </>
       )}
     </div>
