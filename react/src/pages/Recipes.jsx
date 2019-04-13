@@ -29,6 +29,7 @@ function Recipes({ recipes, history }) {
                 <ul>
                   {recipes.map((recipe, index) => (
                     <li key={index} className="item-list">
+                      <img src={recipe.image} width="150px" height="100px" />
                       {recipe.name}
                       <div className="item-list-control">
                         <label
