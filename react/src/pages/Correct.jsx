@@ -4,7 +4,6 @@ import { ClipLoader } from "react-spinners";
 
 function Correct({ image, items, setItems, queryRecipes, history }) {
   function deleteItem(index) {
-    console.log(index);
     items.splice(index, 1);
     setItems([...items]);
   }
@@ -80,11 +79,11 @@ function Correct({ image, items, setItems, queryRecipes, history }) {
                         /> */}
 
                         <label
-                          htmlFor="button-no"
+                          htmlFor={"button-no" + index}
                           className="button-no-label button-label-screen3"
                         />
                         <input
-                          id="button-no"
+                          id={"button-no" + index}
                           className="button-no"
                           type="submit"
                           onClick={() => deleteItem(index)}
