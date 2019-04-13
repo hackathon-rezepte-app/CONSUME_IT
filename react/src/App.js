@@ -44,23 +44,37 @@ export default function App() {
   return splash ? (
     <Splash />
   ) : (
-    <Router>
-      <Route path="/" exact render={() => <Start queryItems={getItems} />} />
-      <Route
-        path="/correct"
-        render={() => (
-          <Correct
-            queryRecipes={getRecipes}
-            items={items}
-            setItems={setItems}
-          />
-        )}
-      />
-      <Route path="/recipes" render={() => <Recipes recipes={recipes} />} />
-      <Route
-        path="/detail/:index"
-        render={() => <Detail recipes={recipes} />}
-      />
-    </Router>
+    <>
+      <Router>
+        <Route path="/" exact render={() => <Start queryItems={getItems} />} />
+        <Route
+          path="/correct"
+          render={() => (
+            <Correct
+              queryRecipes={getRecipes}
+              items={items}
+              setItems={setItems}
+            />
+          )}
+        />
+        <Route path="/recipes" render={() => <Recipes recipes={recipes} />} />
+        <Route
+          path="/detail/:index"
+          render={() => <Detail recipes={recipes} />}
+        />
+      </Router>
+      <div class="footer">
+        <p>
+          made with{" "}
+          <img
+            src="images/icon_heart.svg"
+            class=""
+            height="15px"
+            width="15px"
+          />{" "}
+          in dresden
+        </p>
+      </div>
+    </>
   );
 }
