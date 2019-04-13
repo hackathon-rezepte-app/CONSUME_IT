@@ -5,10 +5,17 @@ import Start from "./pages/Start";
 import Correct from "./pages/Correct";
 import Recipes from "./pages/Recipes";
 import Detail from "./pages/Detail";
+import Splash from "./pages/Splash";
 
 export default function App() {
   const [items, setItems] = useState(null);
   const [recipes, setRecipes] = useState(null);
+
+  const [splash, setSplash] = useState(true);
+
+  setTimeout(() => {
+    setSplash(false);
+  }, 1500);
 
   function getItems(picture) {
     setItems(null);
@@ -39,7 +46,9 @@ export default function App() {
     });
   }
 
-  return (
+  return splash ? (
+    <Splash />
+  ) : (
     <Router>
       <Route path="/" exact render={() => <Start queryItems={getItems} />} />
       <Route

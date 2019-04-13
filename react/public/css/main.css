@@ -1,85 +1,107 @@
 body {
-  background-color: #353535;
-  color: white;
+    background-color: #353535;
+    color: white;
 }
 
 h4 {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .container {
-  max-width: 500px;
-  text-align: center;
+    max-width: 500px;
+    text-align: center;
 }
 
 .one-half.column {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  width: auto;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: auto;
 }
 
 .label-upload {
-  background-image: url("../images/camera_icon.svg");
-  background-repeat: no-repeat;
-  background-size: 150px 150px;
-  height: 150px;
-  text-align: center;
-  background-position: center;
+    background-image:url('../images/camera_icon.svg');
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    height: 150px;
+    text-align: center;
+    background-position: center;
 }
 
-.file-input,
-.button-ok,
-.button-no,
-.button-door,
-.button-next {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
+.file-input, .button-ok, .button-no, .button-door, .button-next {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
 .button-label-screen3 {
-  background-repeat: no-repeat;
-  background-size: 50px 50px;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  background-position: center;
-  padding: 0 5px;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background-position: center;
+    padding: 0 5px;
 }
 
 .button-ok-label {
-  background-image: url("../images/button_change.svg");
+    background-image:url('../images/button_change.svg');
 }
 .button-no-label {
-  background-image: url("../images/button_no.svg");
+    background-image:url('../images/button_no.svg');
 }
 
 .button-door-label {
-  background-image: url("../images/button_door.svg");
-  margin: 0 auto;
+    background-image:url('../images/button_door.svg');
+    margin: 0 auto;
 }
 
 .button-next-label {
-  background-image: url("../images/button_go_recipe.svg");
-  margin: 0 auto;
+    background-image:url('../images/button_go_recipe.svg');
+    margin: 0 auto;
 }
 
 .button-recipe-label {
-  background-image: url("../images/button_go_recipe.svg");
+    background-image:url('../images/button_go_recipe.svg');
+
 }
 
 .item-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .item-list-control {
-  flex-wrap: nowrap;
-  display: flex;
+    flex-wrap: nowrap;
+    display: flex;
+}
+
+.splash-img {
+    width: 100%;
+    bottom: 50px;
+    position: absolute;
+    max-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer {
+    background-color: white;
+    bottom: 0;
+    color: #353535;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
 }
