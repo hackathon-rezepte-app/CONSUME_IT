@@ -44,6 +44,19 @@ function Detail({ recipes, match, history }) {
           </div>
         </div>
       </div>
+
+      <div className="footer">
+        <p>
+          made with{" "}
+          <img
+            src="images/icon_heart.svg"
+            className=""
+            height="15px"
+            width="15px"
+          />{" "}
+          in dresden
+        </p>
+      </div>
     </>
   );
 }

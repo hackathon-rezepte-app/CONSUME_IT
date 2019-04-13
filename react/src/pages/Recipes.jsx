@@ -71,6 +71,19 @@ function Recipes({ recipes, history }) {
         className="button-refresh"
         onClick={() => history.push("/")}
       />
+
+      <div className="footer">
+        <p>
+          made with{" "}
+          <img
+            src="images/icon_heart.svg"
+            className=""
+            height="15px"
+            width="15px"
+          />{" "}
+          in dresden
+        </p>
+      </div>
     </>
   );
 }
