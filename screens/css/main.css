@@ -1,6 +1,7 @@
 body {
     background-color: #353535;
     color: white;
+    position: relative;
 }
 
 h4 {
