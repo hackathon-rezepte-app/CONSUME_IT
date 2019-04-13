@@ -13,8 +13,8 @@ function Correct({ items, setItems, queryRecipes, history }) {
 
           <ul>
             {items &&
-              items.map(item => (
-                <li className="item-list">
+              items.map((item, index) => (
+                <li key={index} className="item-list">
                   {item.name}
                   <div className="item-list-control">
                     <label
